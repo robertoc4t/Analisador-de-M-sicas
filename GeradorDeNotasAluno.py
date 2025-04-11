@@ -68,13 +68,22 @@ def exibir_resultados():
         else:
             print(f"{nome}: Sem notas registradas.")
 
+
+def alterar_nota(nome, nota):
+    dados = carregar_dados()
+    if nome in dados:
+        dados[nome].append[nota]
+    else:
+        print(f"A nota do aluno {nome}, foi atualizada")
+
 # Menu principal do programa
 while True:
     print("\nGerenciador de Notas")
     print("1 - Adicionar Aluno")
     print("2 - Adicionar Nota")
-    print("3 - Exibir Resultados")
-    print("4 - Sair")
+    print("3 - Alterar Nota")
+    print("4 - Exibir Resultados")
+    print("5 - Sair")
     
     opcao = input("Escolha uma opção: ")
 
@@ -86,8 +95,12 @@ while True:
         nota = float(input("Nota: "))
         adicionar_nota(nome, nota)
     elif opcao == "3":
-        exibir_resultados()
+        nome = input("Nome do aluno: ")
+        nota = int(input("Nota do aluno: "))
+        alterar_nota
     elif opcao == "4":
+        exibir_resultados()
+    elif opcao == "5":
         print("Saindo...")
         break
     else:
