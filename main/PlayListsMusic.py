@@ -1,4 +1,13 @@
 from thefuzz import fuzz, process
+from flask import Flask;
+import mysql.connector as connector;
+
+app = Flask(__name__)
+
+@app.route("/")
+def homepage():
+    return 'Meu site funcionou'
+
 
 
 def audio(caminhoArquivo):
